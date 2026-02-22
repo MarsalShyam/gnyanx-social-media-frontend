@@ -11,12 +11,14 @@ import CreatePost from './pages/CreatePost'
 import { useUser } from '@clerk/clerk-react'
 // import {Layout} from './pages/Layout'
 import LayoutN from './pages/LayoutN'
+import {Toaster} from 'react-hot-toast'
 
 
 const App = () => {
   const {user} =useUser()
   return (
     <>
+    <Toaster/>
     <Routes>
       <Route path='/' element={!user ? <Login/>: <LayoutN/>}>
         <Route index element={<Feed/>}/>
